@@ -25,8 +25,8 @@ namespace WordScramble
         public Game()
         {
             // ////////// => TO IMPLEMENT <= //////////// //
-            wordProvider = word ; 
-            this.gameStats = new gameStats[5];
+            wordProvider = ; 
+            this.gameStats = gameStats[5];
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace WordScramble
             /// <summary>
             /// The randomly chosen word for the current round.
             /// </summary>
-            string word = ;
+            string word =  ;
             // ////////// => TO IMPLEMENT <= //////////// //
 
             /// <summary>
@@ -123,7 +123,7 @@ namespace WordScramble
                 for (int i = gameStats.Length - 1; i > 0; i--)
                 {
                     // ////////// => TO IMPLEMENT <= //////////// //
-                    new gameStats >= gameStats[i];
+                    return gameStats;
                 }
 
                 // Add new result at the beginning
@@ -169,11 +169,14 @@ namespace WordScramble
                 // Add row to table
                 // Table.AddRow() only accepts strings
                 // ////////// => TO IMPLEMENT <= //////////// //
-                ;
+                
+                string srank = gameStats[i].ToString();
+                string swordProvider = wordProvider.ToString();
+                string stimeTaken = timeTaken.ToString();
 
-                table.AddRow(gameStats[i]); //rank
-                table.AddRow(gameStats[i]); //word
-                table.AddRow(timeTaken.ToString()); //time taken
+                table.AddRow(srank); //rank
+                table.AddRow(swordProvider); //word
+                table.AddRow(stimeTaken); //time taken
             }
 
             AnsiConsole.Write(table);
