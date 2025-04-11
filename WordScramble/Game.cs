@@ -25,6 +25,8 @@ namespace WordScramble
         public Game()
         {
             // ////////// => TO IMPLEMENT <= //////////// //
+            wordProvider = word ; 
+            this.gameStats = new gameStats[5];
         }
 
         /// <summary>
@@ -52,9 +54,11 @@ namespace WordScramble
                 {
                     case "Start Game":
                         // ////////// => TO IMPLEMENT <= //////////// //
+                        StartGame();
                         break;
                     case "View Game Stats":
                         // ////////// => TO IMPLEMENT <= //////////// //
+                        ShowGameStats();
                         break;
                     case "Quit":
                         return;
@@ -79,12 +83,13 @@ namespace WordScramble
             /// <summary>
             /// The randomly chosen word for the current round.
             /// </summary>
-            string word = // ////////// => TO IMPLEMENT <= //////////// //
+            string word = ;
+            // ////////// => TO IMPLEMENT <= //////////// //
 
             /// <summary>
             /// The scrambled version of the word.
             /// </summary>
-            string scrambledWord = // ////////// => TO IMPLEMENT <= //////////// //
+            string scrambledWord = word ;// ////////// => TO IMPLEMENT <= //////////// //
 
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Unscramble the word:[/]");
@@ -105,7 +110,8 @@ namespace WordScramble
             /// <summary>
             /// Checks if the player's guess is correct.
             /// </summary>
-            bool isCorrect = // ////////// => TO IMPLEMENT <= //////////// //
+
+            bool isCorrect = userInput ;
 
             if (isCorrect)
             {
@@ -117,10 +123,11 @@ namespace WordScramble
                 for (int i = gameStats.Length - 1; i > 0; i--)
                 {
                     // ////////// => TO IMPLEMENT <= //////////// //
+                    new gameStats >= gameStats[i];
                 }
 
                 // Add new result at the beginning
-                gameStats[0] = // ////////// => TO IMPLEMENT <= //////////// //
+                gameStats[0] = gameStats[1];
             }
             else
             {
@@ -156,12 +163,17 @@ namespace WordScramble
             {
                 if (gameStats[i] == null)
                 {
-                    // ////////// => TO IMPLEMENT <= //////////// //
+                    return;
                 }
                 
                 // Add row to table
                 // Table.AddRow() only accepts strings
                 // ////////// => TO IMPLEMENT <= //////////// //
+                ;
+
+                table.AddRow(gameStats[i]); //rank
+                table.AddRow(gameStats[i]); //word
+                table.AddRow(timeTaken.ToString()); //time taken
             }
 
             AnsiConsole.Write(table);
